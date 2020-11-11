@@ -42,8 +42,7 @@ public class UsuarioModel {
 	@Column
 	@NotNull
 	private String imagem_usuario;
-	
-	
+
 	public Long getId_usuario() {
 		return id_usuario;
 	}
@@ -68,13 +67,6 @@ public class UsuarioModel {
 		this.senha = senha;
 	}
 
-	public boolean isCategoria_usuario() {
-		return categoria_usuario;
-	}
-
-	public void setCategoria_usuario(boolean categoria_usuario) {
-		this.categoria_usuario = categoria_usuario;
-	}
 
 	public String getEmail() {
 		return email;
@@ -92,10 +84,5 @@ public class UsuarioModel {
 		this.imagem_usuario = imagem_usuario;
 	}
 	
-	
-	
-	
-	
-	
-	
+		
 }

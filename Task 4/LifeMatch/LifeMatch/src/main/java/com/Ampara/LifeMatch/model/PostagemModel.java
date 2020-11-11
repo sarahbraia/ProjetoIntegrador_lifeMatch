@@ -42,7 +42,7 @@ public class PostagemModel {
 	
 	@Column
 	@NotNull
-	private Enum identificacao;
+	private Identificacao identificacao;
 	
 	@Column
 	@NotNull
@@ -83,15 +83,6 @@ public class PostagemModel {
 	}
 
 	
-	
-	public Enum getIdentificacao() {
-		return identificacao;
-	}
-
-	public void setIdentificacao(Enum identificacao) {
-		this.identificacao = identificacao;
-	}
-
 	public String getImagens_postagem() {
 		return imagens_postagem;
 	}

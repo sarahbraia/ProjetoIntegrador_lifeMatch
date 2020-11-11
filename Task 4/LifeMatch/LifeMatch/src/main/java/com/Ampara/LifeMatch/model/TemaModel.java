@@ -2,6 +2,8 @@ package com.Ampara.LifeMatch.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -18,41 +20,36 @@ public class TemaModel {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private Long id_tema;
 	
-	@Column
-	@NotNull
-	private String categoria_ajuda;
+	
+	@Column(columnDefinition = "ENUM('Higiene', 'Alimenticia', 'Profissional')")
+    @Enumerated(EnumType.STRING)
+    private CategoriaAjuda categoriaAjuda ;
+
 	
 	@Column
 	@NotNull
 	@Size (min = 10 ,max = 500)
 	private String decricao;
 
+
 	public Long getId_tema() {
 		return id_tema;
 	}
+
 
 	public void setId_tema(Long id_tema) {
 		this.id_tema = id_tema;
 	}
 
-	public String getCategoria_ajuda() {
-		return categoria_ajuda;
-	}
-
-	public void setCategoria_ajuda(String categoria_ajuda) {
-		this.categoria_ajuda = categoria_ajuda;
-	}
 
 	public String getDecricao() {
 		return decricao;
 	}
 
+
 	public void setDecricao(String decricao) {
 		this.decricao = decricao;
 	}
-	
-	
-	
-	
+		
 	
 }
