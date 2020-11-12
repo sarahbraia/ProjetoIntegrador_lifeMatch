@@ -37,6 +37,13 @@ public class PostagemController {
 						.orElse(ResponseEntity.notFound().build());
 	}
 	
+	@GetMapping("/{titulo}")
+	public ResponseEntity<PostagemModel>getByCategoriaAjuda(@PathVariable String titulo){
+		return repository.findByTitulo(titulo)
+				.map(resp-> ResponseEntity.ok(resp))
+						.orElse(ResponseEntity.notFound().build());
+	}
+	
 	@PostMapping
 	public ResponseEntity<PostagemModel>post (@RequestBody PostagemModel postagem){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
